@@ -1,0 +1,41 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="blog-post">
+        {% if latest_question_list %}
+            {% for question in latest_question_list %}
+                    <h3>{{ question.question_text }}<h3>
+                    <a href="{% url 'polls:detail' question.id %}"><p class="lead">Zagłosuj</p></a>
+                    <a href="{% url 'polls:results' question.id %}"><p class="lead">Zobacz wyniki</p></a>
+                <hr>
+            {% endfor %}
+
+            <div class="pagination">
+                <span class="step-links">
+                    <div class="btn-group" role="group" aria-label="Nav-group">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1" role="button" type="button" class="btn btn-primary btn-sm">&laquo; pierwsza</a>
+                            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-primary btn-sm">poprzednia</a>
+                        {% endif %}
+                
+                        <span class="lead">
+                            <a type="button" class="btn btn-primary btn-sm" disabled> Strona {{ page_obj.number }} z {{ page_obj.paginator.num_pages }}</a>
+                        </span>
+                
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" type="button" class="btn btn-primary btn-sm">następna</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}" type="button" class="btn btn-primary btn-sm">ostatnia &raquo;</a>
+                        {% endif %}
+                    </div>
+                </span>
+            </div>
+
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    </div>
+
+{% endblock content %}

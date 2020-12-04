@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Nasza Łubianka - AKTUALNOŚCI{% endblock %}
+
+{% block content %}
+
+<!-- <img class="masthead-avatar mb-5" src="{% static 'theme/assets/img/avataaars.svg' %}" alt="" /> -->
+
+
+
+<!-- <p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+</script> -->
+
+<div class="blog-post" id="mfeed">
+    <!-- <h1>
+        AKTUALNOŚCI
+    </h1>
+    <br>
+    <hr> -->
+    {% for list_item in list_of_articles %}
+    {% include 'article_snippet.html' with value=list_item %}
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

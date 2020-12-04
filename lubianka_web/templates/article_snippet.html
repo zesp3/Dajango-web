@@ -1,0 +1,50 @@
+
+<!-- <p id = "artitle"></p><br>
+<p id = "ardate"></p><br>
+<p id = "arcont"></p><br>
+<p id = "arsource"></p><br>
+<p>sanity check</p><br>
+
+<br> -->
+
+<br>
+<script>
+    socka = '{{value}}';
+    var jsonObject = JSON.parse(socka.replace(/&quot;/g,'"'));
+    var paratitle = document.createElement("P");
+    paratitle.className = "h3";               
+    paratitle.innerHTML =  jsonObject.title;                
+    document.getElementById("mfeed").appendChild(paratitle);
+
+    var paratitle = document.createElement("P");
+    paratitle.className = "kbd";               
+    paratitle.innerHTML = jsonObject.date;                
+    document.getElementById("mfeed").appendChild(paratitle);
+
+    var paratitle = document.createElement("P");
+    paratitle.className = "lead";               
+    paratitle.innerHTML = jsonObject.cont_art;                
+    document.getElementById("mfeed").appendChild(paratitle);
+
+    var paratitle = document.createElement("P");
+    paratitle.className = "code";               
+    paratitle.innerHTML = jsonObject.source;                
+    document.getElementById("mfeed").appendChild(paratitle);
+
+    // document.getElementById("artitle").innerHTML = jsonObject.title;
+    // document.getElementById("ardate").innerHTML = jsonObject.date;
+    // document.getElementById("arcont").innerHTML = jsonObject.cont_art;
+    // document.getElementById("arsource").innerHTML = jsonObject.source;
+    // console.log(jsonObject);
+</script>
+<hr>
+
+<!-- <p id="demo2"></p><br>
+<script>
+    console.log('{{list_item}}');
+    socka = '{{list_item}}'
+    var jsonObject = JSON.parse(socka);
+    document.getElementById("demo2").innerHTML = jsonObject.title;
+    console.log(jsonObject);
+
+</script> -->

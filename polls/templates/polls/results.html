@@ -1,0 +1,23 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="blog-post">
+
+    <h1>{{ question.question_text }}</h1>
+
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'polls:index' %}">Powrót</a>
+
+    <!-- <a href="{% url 'polls:detail' question.id %}">Vote again?</a> -->
+
+</div>
+
+{% endblock content %}
