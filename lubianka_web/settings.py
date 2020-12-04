@@ -79,14 +79,26 @@ WSGI_APPLICATION = 'lubianka_web.wsgi.application'
 DATABASES = {
   'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lubianka-serv',
-        'USER': 'lubianka-serv',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
+        'NAME': 'eqokcett',
+        'USER': 'eqokcett',
+        'PASSWORD': 'zjdOMkX1nPmuNCYxOZGAMbqtzKmIGj3W',
+        'HOST': 'kandula.db.elephantsql.com',
         'PORT': '5432',
     }
 }
 
+
+
+# DATABASES = {
+#   'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'lubianka-serv',
+#         'USER': 'lubianka-serv',
+#         'PASSWORD': '1234',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
